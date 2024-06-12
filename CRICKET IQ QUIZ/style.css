@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url("https://dm0qx8t0i9gc9.cloudfront.net/watermarks/image/rDtN98Qoishumwih/vector-illustration-of-cricket-background_G14nsZ5u_SB_PM.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.quiz-container {
+    background: black;  /* fallback for old browsers #4A00E0;  */
+    background: -webkit-linear-gradient(to right, #8E2DE2, #4A00E0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: rgb(14, 104, 222);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: 270px;
+    padding: 20px;
+    text-align: center;
+    border: 5px solid cyan;
+}
+
+.quiz-header {
+    margin-bottom: 20px;
+}
+
+.quiz-header h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li label {
+    cursor: pointer;
+}
+
+button {
+    background: white;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: white;
+    color: blue;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #0052cc;
+}
+
+button:focus {
+    outline: none;
+}
