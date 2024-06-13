@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --primary-bg-color: #000000; /* Black */
+  --secondary-bg-color: #ffffff; /* White */
+  --text-color: #4682B4;
+  --accent-color: #FFD700;
+  --border-radius: 25px;
+  --box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --animation-duration: 20s; /* Change the duration as needed */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to bottom, var(--primary-bg-color) 0%, var(--primary-bg-color) 50%, var(--secondary-bg-color) 50%, var(--secondary-bg-color) 100%);
+  background-size: 100% 200%; /* Adjust the size as needed */
+  animation: animateBackground var(--animation-duration) infinite alternate;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+@keyframes animateBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+.navbar {
+  background-color: var(--primary-bg-color); /* Set navbar background color */
+  padding: 10px 20px; /* Add some padding to the navbar */
+  display: flex;
+  justify-content: space-between; /* Align items horizontally */
+  align-items: center; /* Align items vertically */
+  width: 100%;
+}
+
+.navbar-left h1 {
+  margin: 0; /* Remove default margin */
+  color: var(--accent-color); /* Set heading color */
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  background-color: var(--accent-color);
+  color:black;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: var(--transition);
+  transform: scale(1);
+}
+
+.btn:hover {
+  background-color: #FFA500;
+  transform: scale(1.1);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.custom-text-box {
+  background-color: var(--primary-bg-color);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  max-width: 500px;
+  width: 90%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: var(--transition);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+}
+
+.custom-text-box.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.custom-text-box h3 {
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.custom-text-box select,
+.custom-text-box textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  padding: 10px;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+.custom-text-box textarea {
+  height: 100px;
+  resize: none;
+}
+
+.custom-text-box .custom-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.custom-box {
+  background-color: var(--secondary-bg-color);
+  border-radius: 50px;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition);
+  transform: scale(1);
+  animation: fadeIn 0.5s ease both;
+}
+
+.custom-box img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50px 50px 0 0;
+  transition: var(--transition);
+}
+
+.custom-box .info {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  background-color: var(--accent-color);
+  color: black;
+}
+
+.custom-box:hover {
+  transform: scale(1.05);
+}
+
+.custom-box.active {
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
