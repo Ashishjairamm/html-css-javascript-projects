@@ -1,0 +1,131 @@
+body {
+  font-family: Arial, sans-serif;
+  background: none; /* Remove the background image from the body */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  position: relative; /* Necessary for positioning the pseudo-element */
+}
+
+body::before {
+  content: "";
+  background: url('https://www.techiexpert.com/wp-content/uploads/2019/10/Instagram-Marketing.jpg') no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.5; /* Adjust the transparency */
+  position: fixed; /* Ensure the background covers the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure the background is behind the content */
+}
+
+/* Home Page */
+.home {
+  background-color: #f0f0f0; /* Light gray background */
+}
+
+/* Search Page */
+.search {
+  background-color: #e6f7ff; /* Light blue background */
+}
+
+/* Reels Page */
+.reels {
+  background-color: #f9e0a7; /* Light yellow background */
+}
+
+/* Activity Page */
+.activity {
+  background-color: #d5f5e3; /* Light green background */
+}
+
+/* Profile Page */
+.profile {
+  background-color: #f5e3e0; /* Light pink background */
+}
+
+.phone {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+nav ul {
+  background: #fff;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav ul li.active i,
+nav ul li.active p {
+  color: #0095f6;
+}
+
+nav ul li i {
+  font-size: 24px;
+}
+
+nav ul li p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.content {
+  display: none;
+  padding: 20px;
+}
+
+.content.show {
+  display: block;
+}
+
+.reels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reel {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.reel video,
+.reel img {
+  display: block;
+  width: 100%;
+}
+
+.profile-info img {
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+}
+
+#profileImages img {
+  border-radius: 8px;
+  display: inline-block;
+  margin: 10px;
+  width: 100px;
+}
+
+#uploadForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
