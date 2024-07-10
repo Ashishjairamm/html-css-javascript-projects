@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winning Glory</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Additional CSS for blinking effect */
+    .color-1 {
+      color: aqua;
+    }
+    
+    .color-2 {
+      color: yellow;
+    }
+    
+    .color-3 {
+      color: rgb(79, 233, 105);
+    }
+    
+    /* Example blinking effect (optional) */
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    .color-1, .color-2, .color-3 {
+      animation: blink 1s infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a href="#" class="header__logo">
+        <a id="toggleBlink"><em style="font-size: 30px; filter: drop-shadow(0 0 10px #10b2df);" id="siteTitle"> <strong>Winning Glory</strong></em></a>
+      </a>
+      
+    </header>
+
+    <main class="sliders-container">
+      <ul class="pagination">
+        <li class="pagination__item"><a class="pagination__button"></a></li>
+        <li class="pagination__item"><a class="pagination__button"></a></li>
+        <li class="pagination__item"><a class="pagination__button"></a></li>
+        <li class="pagination__item"><a class="pagination__button"></a></li>
+      </ul>
+      <button class="nav-button nav-button--prev" style="background-color: rgb(26, 196, 63);font-weight: bold;">Previous</button>
+      <button class="nav-button nav-button--next" style="background-color: rgb(26, 196, 63);font-weight: bold;">Next</button>
+    </main>
+  </div>
+
+  <script src="https://rawgit.com/lmgonzalves/momentum-slider/master/dist/momentum-slider.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('toggleBlink').addEventListener('click', function() {
+      var siteTitle = document.getElementById('siteTitle');
+      
+      // Toggle through three colors with a class
+      if (siteTitle.classList.contains('color-1')) {
+        siteTitle.classList.remove('color-1');
+        siteTitle.classList.add('color-2');
+      } else if (siteTitle.classList.contains('color-2')) {
+        siteTitle.classList.remove('color-2');
+        siteTitle.classList.add('color-3');
+      } else if (siteTitle.classList.contains('color-3')) {
+        siteTitle.classList.remove('color-3');
+        siteTitle.classList.add('color-1');
+      } else {
+        siteTitle.classList.add('color-1'); // Initial color
+      }
+    });
+  </script>
+</body>
+</html>
