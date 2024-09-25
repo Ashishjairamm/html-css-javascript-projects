@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mini calc</title>
+  <style>
+    body {
+      background-color: #9b4fb9;
+      background-image: url('cals.png'); /* Replace 'cals.png' with your image path */
+      background-size: cover; /* Ensure the background covers the full screen */
+      background-repeat: no-repeat;
+      background-position: center center; /* Centers the background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 170vh;
+      margin: 0;
+    }
+
+    .calculator-container {
+      z-index: 1;
+      
+      
+    }
+
+    table {
+      margin: auto;
+      background-color: #1bdaad;
+      width: 30px; /* Increased width for better layout */
+      max-width: 30px;
+      height: 20px; /* Increased height for better alignment */
+      text-align: center;
+      border-radius: 20px; /* Larger border-radius for smoother edges */
+      padding-right: 20px;
+      border: 3px solid #0eefd5; /* Added border for better visibility */
+    }
+
+    input {
+      outline: 0;
+      border: 0;
+      color: #495069;
+      background-color: #fff;
+      border-radius: 2px; /* Larger border-radius for smoother buttons */
+      width: 75px; /* Wider buttons for better usability */
+      height: 60px; /* Increased button height */
+      margin: 10px;
+      font-size: 24px; /* Larger font for better readability */
+      box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+      margin-bottom: 10px;
+    }
+
+    input:hover {
+      background-color: #fff;
+      box-shadow: 0 4px #b0d2cf;
+    }
+
+    input:active {
+      top: 4px;
+      box-shadow: none;
+    }
+
+    #neelam {
+      width: 300px; /* Adjusted width for a larger display area */
+      font-size: 55px;
+      text-align: right;
+      background-color: #cd4cd6;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .operator {
+      background-color: #1fddee;
+    }
+
+    #clear {
+      background-color: #5b57cc;
+    }
+
+    h3 {
+      text-align: center;
+      color: white;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <br><br><br><br>
+  <div class="calculator-container">
+    <form name="calc">
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <table border="0">
+        <tr>
+          <td colspan="4">
+            <input type="text" name="display" id="neelam" value="" readonly>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="button" value="0" onclick="calc.display.value+='0'"></td>
+          <td><input type="button" value="1" onclick="calc.display.value+='1'"></td>
+          <td><input type="button" value="2" onclick="calc.display.value+='2'"></td>
+          <td><input type="button" class="operator" name="plus" value="+" onclick="calc.display.value+='+'"></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="3" onclick="calc.display.value+='3'"></td>
+          <td><input type="button" value="4" onclick="calc.display.value+='4'"></td>
+          <td><input type="button" value="5" onclick="calc.display.value+='5'"></td>
+          <td><input type="button" class="operator" name="minus" value="-" onclick="calc.display.value+='-'"></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="6" onclick="calc.display.value+='6'"></td>
+          <td><input type="button" value="7" onclick="calc.display.value+='7'"></td>
+          <td><input type="button" value="8" onclick="calc.display.value+='8'"></td>
+          <td><input type="button" class="operator" name="times" value="*" onclick="calc.display.value+='*'"></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="9" onclick="calc.display.value+='9'"></td>
+          <td><input type="button" id="clear" name="clear" value="C" onclick="calc.display.value=''"></td>
+          <td><input type="button" class="operator" name="equal" value="=" onclick="calc.display.value=eval(calc.display.value)"></td>
+          <td><input type="button" class="operator" name="div" value="/" onclick="calc.display.value+='/'"></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</body>
+</html>
