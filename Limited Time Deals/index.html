@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Amazon nonstop deals</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+    background: url('https://i.ytimg.com/vi/oCzb2UK7GHY/maxresdefault.jpg') no-repeat center center;
+    background-size: cover; /* Ensures the background covers the full container without distortion */
+    font-family: "Itim", cursive;
+    min-height: 100vh; /* Make sure the body covers the entire viewport */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+      .present {
+        width: 310px;
+        max-width: 90vw;
+        margin: 0 auto;
+        cursor: pointer;
+      }
+
+      .box {
+        width: 400px;
+        max-width: 90vw;
+        height: 250px;
+      }
+
+      .box,
+      .lid {
+        background: radial-gradient(white 15%, transparent 15.1%),
+          radial-gradient(white 15%, transparent 15.1%), rgb(255, 153, 0);
+        background-position: 0 0, 25px 25px;
+        background-size: 50px 50px;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      .lid {
+        width: 400px;
+        max-width: 90vw;
+        height: 70px;
+        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        padding: 0 2px;
+        background-color: rgb(243, 130, 0);
+        top: 0;
+        left: 0;
+        transition: top ease-out 0.5s, left ease-out 0.5s, transform ease-out 0.5s;
+      }
+
+      .box span,
+      .lid span {
+        position: absolute;
+        display: block;
+        background: rgba(235, 199, 0, 0.8);
+        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .box span:first-child {
+        width: 100%;
+        height: 60px;
+        top: 80px;
+      }
+
+      .box span:last-child,
+      .lid span {
+        width: 60px;
+        height: 100%;
+        left: 170px;
+      }
+
+      .promo {
+        font-size: 30px;
+        color: white;
+        text-align: center;
+        position: relative;
+        height: 0;
+        top: 10px;
+        transition: all ease-out 0.7s;
+      }
+
+      .promo p {
+        font-size: 24px;
+        margin: 0;
+      }
+
+      .promo h2 {
+        font-size: 40px;
+        margin: 0;
+      }
+
+      .present:hover .lid {
+        top: -100px;
+        transform: rotateZ(10deg);
+        left: 10px;
+      }
+
+      .present:hover .promo {
+        top: -80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="present" id="present">
+      <div class="lid">
+        <span></span>
+      </div>
+      <div class="promo">
+        <p>Amazon Prime Day Deal</p>
+        <h2>GET20OFF on Diwali 2024</h2>
+      </div>
+      <div class="box">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script>
+      const present = document.getElementById("present");
+      const options = {
+        colors: ["#FF9900", "#232F3E", "#34D963", "#FF5757", "#D9D74A", "#1E91D9", "#1B608C"],
+      };
+
+      present.addEventListener("mouseenter", () => {
+        confetti(options);
+      });
+      present.addEventListener("touchstart", () => {
+        confetti(options);
+      });
+    </script>
+  </body>
+</html>
